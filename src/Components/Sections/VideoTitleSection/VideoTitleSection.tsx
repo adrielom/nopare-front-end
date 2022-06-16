@@ -1,6 +1,6 @@
 import React from 'react';
-import TitleComponent from '../../TitleComponent';
-import VideoBackgroundComponent from '../../VideoBackgroundComponent';
+import TitleComponent from '../../Shared/TitleComponent';
+import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
 import './video-title-section.scss';
 
 interface VideoTitleSectionProps {}

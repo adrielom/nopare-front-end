@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleComponent from '../../TitleComponent';
+import TitleComponent from '../../Shared/TitleComponent';
 import './theater-video-section.scss';
 
 interface TheaterVideoSectionProps {}

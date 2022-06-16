@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleComponent from '../../TitleComponent';
+import TitleComponent from '../../Shared/TitleComponent';
 import './contact-me-section.scss';
 
 interface ContactMeSectionProps {}

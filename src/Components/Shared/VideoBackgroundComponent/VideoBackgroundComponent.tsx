@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ClassAttributes, ReactNode } from 'react';
 import './video-background-component.scss';
 
 interface VideoBackgroundComponentProps {
