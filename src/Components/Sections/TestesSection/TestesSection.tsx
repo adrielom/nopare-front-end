@@ -3,9 +3,7 @@ import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTi
 import { TitleComponent } from '../../Shared/TitleComponent';
 import './testes-section.scss';
 
-interface TestesSectionProps {}
-
-export default function TestesSection({}: TestesSectionProps) {
+export default function TestesSection() {
 	return (
 		<div className='testes-section'>
 			<HeaderTitleComponent style={{ position: 'absolute' }}>

@@ -1,1 +1,14 @@
-.social-network-section {}
+.social-network-section {
+    main {
+        display: flex;
+        justify-content: center;
+        h1 {
+            width: 60vw;
+            text-align: center;
+        }
+        p {
+            font-family: 'Montserrat';
+            font-size: 2rem;
+        }
+    }
+}
