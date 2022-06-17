@@ -1,6 +1,62 @@
+@import "../../../App.scss";
+
 .wrapper {
     position: relative;
-    
     top: 0;
     z-index: 2;
+
+    .navbar {
+        position: absolute;
+        right: 2em;
+        top: 1.8em;
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        .navbar-nav {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            a {
+                align-self: flex-end;
+                font-family: 'Montserrat';
+                font-size: 1.2rem;
+                color: white !important;
+                font-weight: normal;
+                transition: all 200ms ease ;
+            }
+            a:not(:last-child):after{
+                content: '.';
+                margin-left: 0.5em;
+            }
+            a:hover {
+                color: $accent-color !important;
+                font-weight: 600;
+            }
+        }
+    
+        .navbar-toggler {
+            color: white;
+            border-color: white;
+            span {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+}
+
+main {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        z-index: 3;
+        height: 5.5em;
+        margin-bottom: 2em;
+    }
 }

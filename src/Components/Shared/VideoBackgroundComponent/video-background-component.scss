@@ -1,16 +1,14 @@
 .wrapper{
-    height:500px;
+    height: 100vh;
     position:relative;
     overflow:hidden;
 }
 
-iframe{
+video {
     position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    left:0;
+    height: 100%;
+    width: 100%;
     pointer-events:none;
-    width:100vw;
-    height:56.25vw;
-    filter: brightness(70%);
+    object-fit: cover;
+    filter: brightness(45%);
 }

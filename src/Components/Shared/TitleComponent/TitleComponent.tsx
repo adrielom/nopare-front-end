@@ -1,14 +1,22 @@
 import React, { ReactNode } from 'react';
 import './title-component.scss';
 
-interface TitleComponentProps {
+interface TitleComponentProps extends React.HTMLAttributes<HTMLHeadElement> {
 	color?: string;
-	children: ReactNode;
 }
 
-export default function TitleComponent({
+export const TitleComponent = ({
 	color,
 	children,
-}: TitleComponentProps) {
-	return <h1 style={{ color: color || 'black' }}> {children}</h1>;
-}
+	...rest
+}: TitleComponentProps) => {
+	return (
+		<h1
+			style={{
+				color: color || 'black',
+			}}
+			{...rest}>
+			{children}
+		</h1>
+	);
+};

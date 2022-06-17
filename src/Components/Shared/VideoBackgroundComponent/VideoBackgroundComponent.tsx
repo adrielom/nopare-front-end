@@ -1,7 +1,7 @@
 import React, { ClassAttributes, ReactNode } from 'react';
 import './video-background-component.scss';
-
-interface VideoBackgroundComponentProps {
+interface VideoBackgroundComponentProps
+	extends React.HTMLAttributes<HTMLDivElement> {
 	uri: string;
 	children?: ReactNode;
 }
@@ -9,13 +9,15 @@ interface VideoBackgroundComponentProps {
 export default function VideoBackgroundComponent({
 	uri,
 	children,
+	...rest
 }: VideoBackgroundComponentProps) {
 	return (
-		<div className='wrapper'>
-			<iframe
-				src={`https://www.youtube.com/embed/${uri}?autoplay=1&controls=0&disablekb=1&loop=1&modestbranding=1&iv_load_policy=3&playsinline=1&color=white&mute=1&playlist=${uri}`}
-				frameBorder={0}
-			/>
+		<div className='video-background-component-wrapper' {...rest}>
+			<video autoPlay muted id='background-video' loop>
+				<source src={uri} type='video/mp4' />
+				<source src={uri} type='video/ogg' />
+				Your browser does not support the video tag.
+			</video>
 			{children}
 		</div>
 	);
