@@ -4,7 +4,7 @@ import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
 import VideoTitleSection from '../VideoTitleSection';
 import './header-section.scss';
 import Logo from '../../../assets/svgs/nopare - white.svg';
-import CarVideo from '../../../assets/videos/Slalom.mp4';
+import CarVideo from '../../../assets/videos/home.webm';
 
 interface HeaderSectionProps {}
 

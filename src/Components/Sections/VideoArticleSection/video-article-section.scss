@@ -4,13 +4,34 @@
     padding: 3.5em;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 5em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, calc(50% - 5em)));
+    justify-content: center;
+    div {
+        width: 100%;
+    }
+    .text-container {
+        text-align: left;
+    }
     .iframe-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         iframe {
-            height: 100%;
+            height: 350px;
             width: 100%;
         }
     }
  
+}
+
+@media (max-width: 1400px) {
+    .video-article-section {
+        grid-template-columns: 1fr;
+        .text-container {
+            text-align: justify;
+        }
+    }
 }
