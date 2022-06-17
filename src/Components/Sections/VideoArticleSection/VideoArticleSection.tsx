@@ -30,6 +30,7 @@ export default function VideoArticleSection({}: React.HTMLAttributes<HTMLSelectE
 					src='https://www.youtube.com/embed/32jFgYES2Uc'
 					title='YouTube video player'
 					frameBorder='0'
+					allowFullScreen
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
 			</div>
 		</section>
