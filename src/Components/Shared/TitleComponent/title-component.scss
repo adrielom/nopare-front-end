@@ -1,4 +1,13 @@
 h1 {
     font-family: 'Montserrat';
     font-weight: 600;
+    font-size: 3.5vw;
+    color: #212529;
+    word-break: break-word;
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 6.5vw;
+    }
 }

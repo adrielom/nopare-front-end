@@ -1,5 +1,10 @@
 @import "../../../App.scss";
 
+.App > section {
+    margin: 0 !important;
+
+}
+
 .wrapper {
     position: relative;
     top: 0;
@@ -32,7 +37,7 @@
             }
             a:hover {
                 color: $accent-color !important;
-                font-weight: 600;
+                font-weight: 700;
             }
         }
     
@@ -58,5 +63,21 @@ main {
         z-index: 3;
         height: 5.5em;
         margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 800px) {
+    .home-section {
+        main {
+            .home-logo {
+                position: absolute;
+                bottom: 0;
+                width: 50%;
+            }
+            .home-title {
+                display: none;
+            }
+        }
+        
     }
 }

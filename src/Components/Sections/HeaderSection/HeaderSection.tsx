@@ -5,34 +5,53 @@ import VideoTitleSection from '../VideoTitleSection';
 import './header-section.scss';
 import Logo from '../../../assets/svgs/nopare - white.svg';
 import CarVideo from '../../../assets/videos/home.webm';
+import {
+	ScrollingProvider,
+	useScrollSection,
+	Section,
+} from 'react-scroll-section';
 
 interface HeaderSectionProps {}
 
 export default function HeaderSection({}: HeaderSectionProps) {
+	const homeSection = useScrollSection('home');
+	const aboutUsSection = useScrollSection('aboutUs');
+	const noPareSection = useScrollSection('noPare');
+	const testesSection = useScrollSection('testes');
+	const suporteSection = useScrollSection('suporte');
+	const contatoSection = useScrollSection('contato');
+	const revendedoresSection = useScrollSection('revendedores');
+
 	return (
-		<VideoBackgroundComponent uri={CarVideo}>
+		<VideoBackgroundComponent className='home-section' uri={CarVideo}>
 			<div className='wrapper'>
 				<Navbar className='navbar' bg='transparent' expand='lg'>
 					<Container>
-						<Navbar.Toggle aria-controls='basic-navbar-nav' />
+						<Navbar.Toggle
+							onClick={() => console.log('hey')}
+							aria-controls='basic-navbar-nav'
+						/>
 						<Navbar.Collapse
 							id='basic-navbar-nav'
 							className='justify-content-end'>
 							<Nav>
-								<Nav.Link href='#home'>home</Nav.Link>
-								<Nav.Link href='#link'>sobre nós</Nav.Link>
-								<Nav.Link href='#link'>no pare</Nav.Link>
-								<Nav.Link href='#link'>testes</Nav.Link>
-								<Nav.Link href='#link'>suporte</Nav.Link>
-								<Nav.Link href='#link'>contato</Nav.Link>
-								<Nav.Link href='#link'>revendedores</Nav.Link>
+								<Nav.Link onClick={homeSection.onClick}>home</Nav.Link>
+								<Nav.Link onClick={aboutUsSection.onClick}>sobre nós</Nav.Link>
+								<Nav.Link onClick={noPareSection.onClick}>no pare</Nav.Link>
+								<Nav.Link onClick={testesSection.onClick}>testes</Nav.Link>
+								<Nav.Link onClick={suporteSection.onClick}>suporte</Nav.Link>
+								<Nav.Link onClick={contatoSection.onClick}>contato</Nav.Link>
+								<Nav.Link onClick={revendedoresSection.onClick}>
+									revendedores
+								</Nav.Link>
 							</Nav>
 						</Navbar.Collapse>
 					</Container>
 				</Navbar>
 				<main>
-					<img src={Logo} alt='nopare logo' />
+					<img className='home-logo' src={Logo} alt='nopare logo' />
 					<TitleComponent
+						className='home-title'
 						style={{
 							color: 'white',
 							fontSize: '1.95rem',

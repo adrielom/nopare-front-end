@@ -12,7 +12,7 @@ export default function StorySection({}: StorySectionProps) {
 			<HeaderTitleComponent>:: sobre nós</HeaderTitleComponent>
 			<div className='fifty-fifty'>
 				<div className='text-side'>
-					<TitleComponent className='title-text' style={{ fontSize: '4rem' }}>
+					<TitleComponent className='title-text'>
 						Desde 2014, uma empresa em desenvolvimento contínuo.
 					</TitleComponent>
 					<p>

@@ -22,7 +22,7 @@ export default function SocialNetworkSection({}: SocialNetworkSectionProps) {
 				<div className='info'>
 					<p>Ligue: (85) 3065.5586</p>
 					<div>
-						<a href='#'>
+						<a href='home'>
 							<AiOutlineYoutube />
 						</a>
 						<a href='#'>

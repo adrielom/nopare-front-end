@@ -1,26 +1,65 @@
 $accent-color: #d39326;
+$defaultMargin: 5em;
 
 #cintas-title {
     color: $accent-color !important;
-    font-size: 3rem;
-    width: 65%;
+    font-size: 3vw;
+    width: 67%;
     margin-bottom: .5em;
+}
 
+#tire-background-image {
+    .video-article-section {
+        .text-container {
+            margin-left: $defaultMargin;
+        }
+    }
+    position: relative;
+    padding-top: calc($defaultMargin - 3em);
+    .headerTitleComponent {
+        margin-left: $defaultMargin;
+        position: absolute;
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 2em;
+    padding-left: $defaultMargin;
+    background-color: black;
+    color: $accent-color;
+    p {
+        margin: 0;
+    }
 }
 
 @media (max-width: 1400px) {
-    #cintas-title {
-        margin: auto;
-        text-align: center;
-    }
-    #cintas-title ~ a {
-        display: flex;
-        justify-content: center;
-        margin-top: 1em;
-        .rounded-button {
-            margin: auto;
-            width: auto;
+    #tire-background-image {
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center !important;
+            align-items: center;
+            margin: auto !important;
         }
+        #cintas-title {
+            text-align: center;
+            font-size: 5vw;
+        }
+        #cintas-title ~ a {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+            .rounded-button {
+                margin: auto;
+                width: auto;
+            }
+        }
+    }
+    footer {
+       display: flex;
+       padding: 2em !important;
+       justify-content: center;
     }
 }
 
@@ -48,7 +87,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding-bottom: 2em;
+    padding-bottom: $defaultMargin;
     .tire-background-image-overlay {
         background-color: #000000ca;
         position: absolute;

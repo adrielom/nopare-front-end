@@ -1,12 +1,14 @@
+@import '../../../App.scss';
+
 .testes-section {
-    padding: 2em;
+    padding: $defaultMargin;
+    padding-top: calc($defaultMargin - 3em);    
     .testes-wrapper {
-        margin-top: 5em;
         main {
             display: flex;
             justify-content: center;
             h1 {
-                width: 50vw;
+                width: 70vw;
                 text-align: center;
                 margin-bottom: 2em;
                 word-break: break-word;

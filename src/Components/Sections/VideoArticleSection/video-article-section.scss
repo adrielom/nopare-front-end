@@ -1,17 +1,18 @@
+@import '../../../App.scss';
 
 .video-article-section {
     background-color: black;
     position: relative;
     color: white;
     padding: 3.5em;
+    padding-left: $defaultMargin;
     margin: 0;
     display: grid;
     gap: 5em;
     grid-template-columns: repeat(auto-fill, minmax(300px, calc(50% - 5em)));
-    justify-content: center;
+    justify-content: start;
     div {
         z-index: 2;
-        width: 100%;
     }
     .text-container {
         text-align: left;

@@ -6,9 +6,7 @@ import './testes-section.scss';
 export default function TestesSection() {
 	return (
 		<div className='testes-section'>
-			<HeaderTitleComponent style={{ position: 'absolute' }}>
-				:: testes
-			</HeaderTitleComponent>
+			<HeaderTitleComponent>:: testes</HeaderTitleComponent>
 			<div className='testes-wrapper'>
 				<main>
 					<TitleComponent>

@@ -1,6 +1,9 @@
+@import '../../../App.scss';
+
 section {
-    margin-left: 2em;
-    margin-bottom: 2.5em;
+    margin-left: $defaultMargin;
+    margin-bottom: $defaultMargin;
+    margin-top: calc($defaultMargin - 3em);
     .header-title {
         height: 10vh;
         margin: auto;
@@ -16,12 +19,16 @@ section {
             font-size: 1.25rem;
             width: 42%;
             font-family: 'Montserrat';
+            h1 {
+                margin-bottom: .85em;
+            }
         }
         div {
             justify-content: flex-end;
             img {
                 width: 100%;
-                object-fit: conver;
+                height: 100%;
+                object-fit: fill;
             }
         }
     }
@@ -29,7 +36,7 @@ section {
 
 @media (max-width: 1400px) {
     section {
-        margin: 2em;
+        margin: $defaultMargin;
         .title-text {
             margin: 1em 0;
         }

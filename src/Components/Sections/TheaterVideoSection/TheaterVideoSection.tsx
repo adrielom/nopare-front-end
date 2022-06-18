@@ -12,9 +12,7 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 	return (
 		<VideoBackgroundComponent className='video-background' uri={Video}>
 			<section>
-				<HeaderTitleComponent style={{ position: 'absolute' }} color={color}>
-					:: no pare
-				</HeaderTitleComponent>
+				<HeaderTitleComponent color={color}>:: no pare</HeaderTitleComponent>
 				<div className='title-component-wrapper'>
 					<TitleComponent
 						style={{
