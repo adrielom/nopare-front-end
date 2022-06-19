@@ -14,7 +14,6 @@ export default function TestesSection() {
 					</TitleComponent>
 					<div>
 						<iframe
-							className='main-video'
 							width='560'
 							height='315'
 							src='https://www.youtube.com/embed/htHzdTMI60Y'

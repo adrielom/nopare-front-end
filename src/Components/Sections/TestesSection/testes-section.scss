@@ -19,6 +19,7 @@
                 margin-bottom: 2em;
                 iframe {
                     height: 100%;
+                    min-height: 350px;
                     width: 100%;
                 }
             }
@@ -65,3 +66,4 @@
         }
     }
 }
+

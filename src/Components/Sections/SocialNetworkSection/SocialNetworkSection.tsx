@@ -22,13 +22,15 @@ export default function SocialNetworkSection({}: SocialNetworkSectionProps) {
 				<div className='info'>
 					<p>Ligue: (85) 3065.5586</p>
 					<div>
-						<a href='home'>
+						<a
+							target='_blank'
+							href='https://www.youtube.com/channel/UCa0wlfWLSNRlwrmWofUAo8Q'>
 							<AiOutlineYoutube />
 						</a>
-						<a href='#'>
+						<a target='_blank' href='https://instagram.com/nopareblindagem'>
 							<AiOutlineInstagram />
 						</a>
-						<a href='#'>
+						<a target='_blank' href='https://m.facebook.com/nopareblindagem/'>
 							<RiFacebookCircleLine />
 						</a>
 					</div>

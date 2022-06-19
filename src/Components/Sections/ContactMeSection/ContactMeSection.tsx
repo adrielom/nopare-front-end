@@ -3,8 +3,9 @@ import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTi
 import { TitleComponent } from '../../Shared/TitleComponent';
 import './contact-me-section.scss';
 import Input from 'react-phone-number-input/input';
-import { Alert } from 'react-bootstrap';
 
+const URI = 'https://nopare-backend.herokuapp.com';
+// const URI = 'http://localhost:5000';
 interface ContactMeSectionProps {}
 
 export default function ContactMeSection({}: ContactMeSectionProps) {
@@ -12,16 +13,27 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 
-	const onSubmit = (e: any) => {
+	const onSubmit = async (e: any) => {
 		e.preventDefault();
 		if (nome.length == 0 || email.length == 0 || phone.length == 0) {
-			alert('Campos Inválidos!');
+			alert('Campos Inválidos ou inexistentes!');
 			return;
 		}
+		const resp = await fetch(URI, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				sender: nome,
+				senderEmail: email,
+				senderPhone: phone,
+			}),
+		});
+		console.log(resp);
 
-		//request
-
-		alert('Obrigado por entrar em contato! ;)');
+		alert('Obrigado por entrar em contato!)');
 		resetFields();
 	};
 
@@ -48,6 +60,7 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 						<input
 							placeholder='Nome'
 							className='rounded-button black-outline'
+							value={nome}
 							type='text'
 							onChange={(e) => {
 								setNome(e.target.value);
@@ -56,6 +69,7 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 						<input
 							placeholder='Email'
 							className='rounded-button black-outline'
+							value={email}
 							type='email'
 							onChange={(e) => {
 								setEmail(e.target.value);
@@ -64,6 +78,7 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 						<Input
 							placeholder='Telefone'
 							className='rounded-button black-outline'
+							value={phone}
 							onChange={(e) => {
 								if (e) {
 									setPhone(e);

@@ -64,7 +64,9 @@ function App() {
 							<TitleComponent id='cintas-title'>
 								Veja como é fácil e rápido instalar as cintas No Pare.
 							</TitleComponent>
-							<a download='teste.docx' href='./assets/manual'>
+							<a
+								href='/src/assets/manual/Manual NO PARE.pdf'
+								download='Manual NO PARE.pdf'>
 								<div className='rounded-button'>
 									<VscFilePdf size={25} style={{ marginRight: 10 }} />
 									baixe o manual
