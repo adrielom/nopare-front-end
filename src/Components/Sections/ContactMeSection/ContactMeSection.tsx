@@ -12,11 +12,14 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 	const [nome, setNome] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
+	const [loading, setLoading] = useState(false);
 
 	const onSubmit = async (e: any) => {
 		e.preventDefault();
+		setLoading(true);
 		if (nome.length == 0 || email.length == 0 || phone.length == 0) {
 			alert('Campos Inválidos ou inexistentes!');
+			setLoading(false);
 			return;
 		}
 		const resp = await fetch(URI, {
@@ -41,6 +44,7 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 		setNome('');
 		setEmail('');
 		setPhone('');
+		setLoading(false);
 	};
 
 	return (
@@ -91,7 +95,8 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 							onClick={onSubmit}
 							className='rounded-button black-outline black-button'
 							type='button'
-							value='Quero ser revendedor'
+							disabled={loading}
+							value={loading ? 'Enviando...' : 'Quero ser revendedor'}
 						/>
 					</form>
 				</div>

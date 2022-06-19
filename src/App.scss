@@ -1,6 +1,24 @@
 $accent-color: #d39326;
 $defaultMargin: 5em;
 
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+/* Then style the iframe to fit in the container div with full height and width */
+.video-responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
 #cintas-title {
     color: $accent-color !important;
     font-size: 3vw;
@@ -35,6 +53,7 @@ footer {
 
 @media (max-width: 1400px) {
     #tire-background-image {
+        padding-bottom: 0 !important;
         .text-container {
             display: flex;
             flex-direction: column;

@@ -14,14 +14,8 @@
                 word-break: break-word;
             }
             div {
-                width: 60vw;
-                height: 500px;
-                margin-bottom: 2em;
-                iframe {
-                    height: 100%;
-                    min-height: 350px;
-                    width: 100%;
-                }
+                width: 90%;
+                margin: auto;
             }
         }
         .text-section {
@@ -30,7 +24,8 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 2em;
-            div {
+            & > div {
+                margin-top: 2em;
                 width:calc(50% - 2em);
                 display: flex;
                 justify-content: center;
