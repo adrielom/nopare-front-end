@@ -27,7 +27,8 @@ color: black;
 .black-outline:hover {
     -webkit-box-shadow: 0px 0px 6px black;
     -moz-box-shadow: 0px 0px 6px black;
-         box-shadow: 0px 0px 6px black
+    box-shadow: 0px 0px 6px black;
+    cursor: pointer;
 }
 
 .black-button {

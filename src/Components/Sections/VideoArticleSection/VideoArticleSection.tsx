@@ -12,14 +12,16 @@ export default function VideoArticleSection({
 	return (
 		<section className={`video-article-section`}>
 			<div className='text-container'>{children}</div>
-			<div className='iframe-container'>
-				<iframe
-					className='responsive-iframe'
-					src={videoUri}
-					title='YouTube video player'
-					frameBorder='0'
-					allowFullScreen
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
+			<div>
+				<div className='video-container'>
+					<iframe
+						className='video-responsive-iframe'
+						src={videoUri}
+						title='YouTube video player'
+						frameBorder='0'
+						allowFullScreen
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
+				</div>
 			</div>
 		</section>
 	);
