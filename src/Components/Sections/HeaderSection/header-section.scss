@@ -71,8 +71,10 @@ main {
         main {
             .home-logo {
                 position: absolute;
-                bottom: 5vh;
-                width: 50%;
+                left: 5vh;
+                top: calc(50% - (5.5em / 2));
+                margin-bottom: 0;
+                width: 35%;
             }
             .home-title {
                 display: none;

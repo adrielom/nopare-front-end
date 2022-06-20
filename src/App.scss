@@ -1,6 +1,13 @@
 $accent-color: #d39326;
 $defaultMargin: 5em;
 
+@mixin mobileAlign {
+    p, h1 {
+        text-align: left !important;
+        width: 100% !important;
+    }
+}
+
 .video-container {
     position: relative;
     overflow: hidden;
@@ -48,6 +55,54 @@ footer {
     color: $accent-color;
     p {
         margin: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        margin: 2em;
+    }
+    #noPare {
+        section {
+            .headerTitleComponent {
+                margin: 2em !important;
+            }
+        }
+    }
+    .video-article-section {
+        padding: 2em;
+        .text-container {
+            text-align: left;
+
+        }
+    }
+    .contact-me-section {
+        padding: 2em !important;
+        p, h1 {
+            text-align: left;
+            width: 100% !important;
+        }
+    }
+    .social-network-section {
+        @include mobileAlign();
+        .info {
+            width: 100% !important;
+            div {
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+    }
+    .testes-section {
+        padding: 2em;
+        .text-section .video-container-parent {
+            margin-top: 0 !important;
+        }
+
+        @include mobileAlign();
+    }
+    .fifty-fifty {
+        @include mobileAlign();
     }
 }
 
