@@ -3,7 +3,7 @@ import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTi
 import { TitleComponent } from '../../Shared/TitleComponent';
 import './contact-me-section.scss';
 import Input from 'react-phone-number-input/input';
-
+import Validator from 'email-validator';
 const URI = 'https://nopare-backend.herokuapp.com';
 // const URI = 'http://localhost:5000';
 interface ContactMeSectionProps {}
@@ -17,25 +17,32 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 	const onSubmit = async (e: any) => {
 		e.preventDefault();
 		setLoading(true);
-		if (nome.length == 0 || email.length == 0 || phone.length == 0) {
+		if (
+			nome.length == 0 ||
+			email.length == 0 ||
+			phone.length == 0 ||
+			!Validator.validate(email)
+		) {
 			alert('Campos Inválidos ou inexistentes!');
 			setLoading(false);
 			return;
 		}
-		const resp = await fetch(URI, {
+		console.log('rer');
+		await fetch(URI, {
 			method: 'POST',
 			headers: {
-				Accept: 'application/json',
 				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
 			},
 			body: JSON.stringify({
 				sender: nome,
 				senderEmail: email,
 				senderPhone: phone,
 			}),
+		}).catch((error) => {
+			resetFields();
+			throw error;
 		});
-		console.log(resp);
-
 		alert('Obrigado por entrar em contato!)');
 		resetFields();
 	};
