@@ -13,9 +13,11 @@ export default function VideoBackgroundComponent({
 }: VideoBackgroundComponentProps) {
 	return (
 		<div className='video-background-component-wrapper' {...rest}>
-			<video autoPlay muted id='background-video' loop>
+			<video autoPlay loop muted playsInline id='background-video'>
 				<source src={uri} type='video/mp4' />
 				<source src={uri} type='video/ogg' />
+				<source src={uri} type='video/webm' />
+				<source src={uri} type='video/mov' />
 				Your browser does not support the video tag.
 			</video>
 			{children}
