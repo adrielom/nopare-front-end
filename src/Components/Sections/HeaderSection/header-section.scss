@@ -59,10 +59,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    img {
-        z-index: 3;
+    .home-logo {
+        position: relative;
+        z-index: 10;
         height: 5.5em;
+        object-fit: contain;
         margin-bottom: 2em;
+        filter: brightness(100%);
     }
 }
 

@@ -2,15 +2,19 @@ import React from 'react';
 import { TitleComponent } from '../../Shared/TitleComponent';
 import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
 import './theater-video-section.scss';
-import Video from '../../../assets/videos/pneu.webm';
+import Video from '../../../assets/videos/pneu.mov';
+import PneuImage from '../../../assets/images/pneuBg.png';
 import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTitleComponent';
+import { OsTypes, osName } from 'react-device-detect';
+import ImageBackgroundComponent from '../../Shared/ImageBackgroundComponent';
 
 interface TheaterVideoSectionProps {}
 
 export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 	let color = '#d39326';
-	return (
-		<VideoBackgroundComponent className='video-background' uri={Video}>
+
+	const Content = () => {
+		return (
 			<section>
 				<HeaderTitleComponent color={color}>:: no pare</HeaderTitleComponent>
 				<div className='title-component-wrapper'>
@@ -23,6 +27,20 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 					</TitleComponent>
 				</div>
 			</section>
-		</VideoBackgroundComponent>
+		);
+	};
+
+	return (
+		<>
+			{OsTypes.IOS === osName || OsTypes.MAC_OS === osName ? (
+				<ImageBackgroundComponent className='video-background' uri={PneuImage}>
+					<Content />
+				</ImageBackgroundComponent>
+			) : (
+				<VideoBackgroundComponent className='video-background' uri={Video}>
+					<Content />
+				</VideoBackgroundComponent>
+			)}
+		</>
 	);
 }

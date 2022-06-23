@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTitleComponent';
 import { TitleComponent } from '../../Shared/TitleComponent';
 import './testes-section.scss';
