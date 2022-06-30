@@ -1,0 +1,30 @@
+.youtube-container {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    position:relative;
+    /* Keep it the right aspect-ratio */
+    aspect-ratio: 16/9;
+    /* No clicking/hover effects */
+    
+    iframe {
+        // pointer-events: none;
+        /* Extend it beyond the viewport... */
+        width: 320%;
+        height: 120%;
+        /* ...and bring it back again */
+        margin-left: -110%;
+        position: absolute;
+        filter: brightness(45%);
+        z-index: -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .youtube-container {
+        iframe {
+            height: 100%;
+            width: 420%;
+        }
+    }
+}

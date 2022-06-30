@@ -1,12 +1,19 @@
 @import '../../../App.scss';
 
+.yt-video-nocontrols {
+    pointer-events: none;
+    position: absolute;
+}
+
 .testes-section {
     padding: $defaultMargin;
     padding-top: calc($defaultMargin - 3em);    
     .testes-wrapper {
         main {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             h1 {
                 width: 70vw;
                 text-align: center;

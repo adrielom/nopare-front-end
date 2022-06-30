@@ -1,12 +1,7 @@
-import React from 'react';
-import { TitleComponent } from '../../Shared/TitleComponent';
-import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
-import './theater-video-section.scss';
-import Video from '../../../assets/videos/pneu.mov';
-import PneuImage from '../../../assets/images/pneuBg.png';
 import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTitleComponent';
-import { OsTypes, osName } from 'react-device-detect';
-import ImageBackgroundComponent from '../../Shared/ImageBackgroundComponent';
+import { TitleComponent } from '../../Shared/TitleComponent';
+import YoutubeBackgroundComponent from '../../Shared/YoutubeBackgroundComponent';
+import './theater-video-section.scss';
 
 interface TheaterVideoSectionProps {}
 
@@ -31,16 +26,10 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 	};
 
 	return (
-		<>
-			{OsTypes.IOS === osName || OsTypes.MAC_OS === osName ? (
-				<ImageBackgroundComponent className='video-background' uri={PneuImage}>
-					<Content />
-				</ImageBackgroundComponent>
-			) : (
-				<VideoBackgroundComponent className='video-background' uri={Video}>
-					<Content />
-				</VideoBackgroundComponent>
-			)}
-		</>
+		<YoutubeBackgroundComponent
+			className='video-background'
+			src={'XiMgTRpK6Sk'}>
+			<Content />
+		</YoutubeBackgroundComponent>
 	);
 }

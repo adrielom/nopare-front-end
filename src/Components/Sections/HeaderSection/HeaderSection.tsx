@@ -8,6 +8,7 @@ import CarImage from '../../../assets/images/carBg.png';
 import { useScrollSection } from 'react-scroll-section';
 import { osName, OsTypes } from 'react-device-detect';
 import ImageBackgroundComponent from '../../Shared/ImageBackgroundComponent/ImageBackgroundComponent';
+import YoutubeBackgroundComponent from '../../Shared/YoutubeBackgroundComponent';
 
 interface HeaderSectionProps {}
 
@@ -68,16 +69,8 @@ export default function HeaderSection({}: HeaderSectionProps) {
 	};
 
 	return (
-		<>
-			{OsTypes.IOS === osName || OsTypes.MAC_OS === osName ? (
-				<ImageBackgroundComponent className='home-section' uri={CarImage}>
-					<Content />
-				</ImageBackgroundComponent>
-			) : (
-				<VideoBackgroundComponent className='home-section' uri={CarVideo}>
-					<Content />
-				</VideoBackgroundComponent>
-			)}
-		</>
+		<YoutubeBackgroundComponent className='home-section' src={'72fF4YLUJqE'}>
+			<Content />
+		</YoutubeBackgroundComponent>
 	);
 }

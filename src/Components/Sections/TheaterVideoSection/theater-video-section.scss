@@ -1,35 +1,19 @@
 @import '../../../App.scss';
 
-.video-background {
-    height: 100vh;
-    width: 100%;
+.youtube-container {
     section {
-        z-index: 3;
-        margin: 0;
-        height: 100%;
         position: relative;
-        padding-top: calc($defaultMargin - 3em);
-        .headerTitleComponent {
-            margin-left: $defaultMargin;
-            position: absolute;
-        }
+        height: 100%;
+        overflow: hidden;
         .title-component-wrapper {
+            flex: 1;
+            height: 75vh;
+            width: 45%;
+            margin: auto;
             display: flex;
-            flex-grow: 1;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-            justify-content: center;
             align-items: center;
-            .title-component {
-                width: 50%;
-                color: $accent-color;
-                font-size: 3.5vw;
-                word-break: break-word;
-            }
         }
     }
-
 }
 
 #background-video {
@@ -38,10 +22,18 @@
 
 @media (max-width: 1400px) {
     .title-component-wrapper {
+        width: 100% !important;
         .title-component {
-            width: 90% !important;
             margin: auto;
-            font-size: 7.5vw !important;
+            font-size: 5.5vw !important;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .title-component-wrapper {
+        .title-component {
+            font-size: 8.5vw !important;
         }
     }
 }
