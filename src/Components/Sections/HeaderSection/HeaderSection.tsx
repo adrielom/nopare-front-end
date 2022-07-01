@@ -3,8 +3,7 @@ import { TitleComponent } from '../../Shared/TitleComponent';
 import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
 import './header-section.scss';
 import Logo from '../../../assets/svgs/nopare - white.svg';
-import CarVideo from '../../../assets/videos/home.mov';
-import CarImage from '../../../assets/images/carBg.png';
+import CarImage from '../../../assets/images/noparecar.png';
 import { useScrollSection } from 'react-scroll-section';
 import { osName, OsTypes } from 'react-device-detect';
 import ImageBackgroundComponent from '../../Shared/ImageBackgroundComponent/ImageBackgroundComponent';
@@ -69,7 +68,10 @@ export default function HeaderSection({}: HeaderSectionProps) {
 	};
 
 	return (
-		<YoutubeBackgroundComponent className='home-section' src={'72fF4YLUJqE'}>
+		<YoutubeBackgroundComponent
+			image={CarImage}
+			className='home-section'
+			src={'72fF4YLUJqE'}>
 			<Content />
 		</YoutubeBackgroundComponent>
 	);

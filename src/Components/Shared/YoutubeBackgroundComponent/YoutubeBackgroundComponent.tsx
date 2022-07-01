@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './youtube-background-component.scss';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 interface YoutubeBackgroundComponentProps
 	extends React.HTMLAttributes<HTMLDivElement> {
 	src: string;
+	image?: string;
 }
 
 export default function YoutubeBackgroundComponent({
 	src,
+	image,
 	children,
 }: YoutubeBackgroundComponentProps) {
+	const [hasLoaded, setHasLoaded] = useState(false);
+
 	const opts: YouTubeProps['opts'] = {
 		height: '390',
 		width: '640',
@@ -28,19 +32,19 @@ export default function YoutubeBackgroundComponent({
 
 	const onPlayerReady: YouTubeProps['onReady'] = (event) => {
 		// access to player in all event handlers via event.target
+		setHasLoaded(true);
 		event.target.playVideo();
 	};
 
 	return (
 		<div className='youtube-container'>
 			<YouTube videoId={src} opts={opts} onReady={onPlayerReady} />
-			{/* <iframe
-				src={`https://www.youtube.com/embed/${src}?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&playlist=${src}`}
-				title='YouTube video player'
-				frameBorder='0'
-				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-				allowFullScreen></iframe> */}
 			{children}
+			{image && !hasLoaded && (
+				<div
+					style={{ backgroundImage: `url(${image})` }}
+					className={`background-image-loading`}></div>
+			)}
 		</div>
 	);
 }

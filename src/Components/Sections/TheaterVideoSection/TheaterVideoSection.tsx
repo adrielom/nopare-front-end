@@ -2,6 +2,7 @@ import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTi
 import { TitleComponent } from '../../Shared/TitleComponent';
 import YoutubeBackgroundComponent from '../../Shared/YoutubeBackgroundComponent';
 import './theater-video-section.scss';
+import Pneu from '../../../assets/images/pneu.png';
 
 interface TheaterVideoSectionProps {}
 
@@ -28,6 +29,7 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 	return (
 		<YoutubeBackgroundComponent
 			className='video-background'
+			image={Pneu}
 			src={'XiMgTRpK6Sk'}>
 			<Content />
 		</YoutubeBackgroundComponent>
