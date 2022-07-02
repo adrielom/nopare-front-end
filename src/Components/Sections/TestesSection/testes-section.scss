@@ -9,62 +9,62 @@
     padding: $defaultMargin;
     padding-top: calc($defaultMargin - 3em);    
     .testes-wrapper {
-        main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            h1 {
-                width: 70vw;
-                text-align: center;
-                margin-bottom: 2em;
-                word-break: break-word;
-            }
-            div {
-                width: 90%;
-                margin: auto;
-            }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        row-gap: 3em;
+        column-gap: 2em;
+        h1 {
+            grid-column: 1 / 4;
+            grid-row: 1 / 1;
+            width: 75%;
+            justify-self: center;
         }
-        .text-section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2em;
-            & > div {
-                margin-top: 2em;
-                width:calc(50% - 2em);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            p {
-                text-align: justify;
-                padding: 0 5em;
-            }
-            .iframe-container {
-                height: 350px;
-            }
+        .video-container {
+            grid-column: 1 / 4;
+            width: 85%;
+            justify-self: center;
         }
+        p {
+            grid-column: 1 / 2;
+            grid-row: 3 / 3;
+            width: 80%;
+            justify-self: center;
+            align-self: center;
+        }
+        .article-video-container {
+            grid-column: 2 / 4;
+            grid-row: 3 / 3;
+        }
+
     }
+    .headerTitleComponent {
+        margin-left: 0;
+    }
+    
 }
 
 @media (max-width: 1400px) {
     .testes-section {
         .testes-wrapper {
-            main {
-                div {
-                    width: 100%;
-                }
+            h1 {
+                width: 100%;
+                justify-self: center;
             }
-            .text-section {
-                div {
-                    width: 100% !important;
-                }
-                p {
-                    padding: 0;
-                }
+            .video-container {
+                width: 100%;
             }
+            p {
+                grid-column: 1 / 4;
+                grid-row: 2 / 2;
+                width: 80%;
+                justify-self: center;
+                align-self: center;
+            }
+            .article-video-container {
+                grid-column: 1 / 4;
+                grid-row: 3 / 3;
+            } 
         }
     }
 }

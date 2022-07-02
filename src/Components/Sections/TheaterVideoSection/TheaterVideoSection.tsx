@@ -31,6 +31,7 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 			className='video-background'
 			image={Pneu}
 			src={'XiMgTRpK6Sk'}>
+			<div className='overlay-bg'></div>
 			<Content />
 		</YoutubeBackgroundComponent>
 	);

@@ -72,6 +72,7 @@ export default function HeaderSection({}: HeaderSectionProps) {
 			image={CarImage}
 			className='home-section'
 			src={'72fF4YLUJqE'}>
+			<div className='overlay-bg'></div>
 			<Content />
 		</YoutubeBackgroundComponent>
 	);

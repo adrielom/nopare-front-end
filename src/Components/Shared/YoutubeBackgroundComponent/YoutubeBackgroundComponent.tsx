@@ -32,8 +32,8 @@ export default function YoutubeBackgroundComponent({
 
 	const onPlayerReady: YouTubeProps['onReady'] = (event) => {
 		// access to player in all event handlers via event.target
-		setHasLoaded(true);
 		event.target.playVideo();
+		setTimeout(() => setHasLoaded(true), 2000);
 	};
 
 	return (
@@ -42,7 +42,9 @@ export default function YoutubeBackgroundComponent({
 			{children}
 			{image && !hasLoaded && (
 				<div
-					style={{ backgroundImage: `url(${image})` }}
+					style={{
+						backgroundImage: `url(${image})`,
+					}}
 					className={`background-image-loading`}></div>
 			)}
 		</div>

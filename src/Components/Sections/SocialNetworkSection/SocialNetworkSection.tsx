@@ -21,6 +21,9 @@ export default function SocialNetworkSection({}: SocialNetworkSectionProps) {
 				<TitleComponent>Fale conosco.</TitleComponent>
 				<div className='info'>
 					<p>Ligue: (85) 3065.5586</p>
+					<p>
+						<a href='mailto:contato@nopare.com.br'>contato@nopare.com.br</a>
+					</p>
 					<div>
 						<a
 							target='_blank'

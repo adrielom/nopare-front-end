@@ -108,7 +108,34 @@ footer {
 
 @media (max-width: 1400px) {
     #tire-background-image {
+        display: grid;
+        grid-template-rows: repeat(6, auto);
         padding-bottom: 0 !important;
+        .headerTitleComponent {
+            margin: auto 2em !important;
+        }
+        .video-article-section {
+            gap: 0;
+            .text-container {
+                width: 100%;
+                align-items: flex-start;
+                padding-left: 2em !important;
+                padding-right: 2em !important;
+                h1 {
+                    text-align: start !important;
+                    width: 100% !important;
+                }
+            }
+        }
+        > a {
+            align-self: center;
+            align-content: stretch;
+            justify-self: center;
+            margin: 3em auto;
+            grid-row: 3 / 4;
+            transform: scale(1.2);
+            z-index: 2;
+        }
         .text-container {
             display: flex;
             flex-direction: column;
@@ -124,6 +151,7 @@ footer {
             display: flex;
             justify-content: center;
             margin-top: 1em;
+            grid-row: 2 / 3;
             .rounded-button {
                 margin: auto;
                 width: auto;

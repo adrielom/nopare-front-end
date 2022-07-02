@@ -15,6 +15,9 @@
             color: black;
             font-size: 2rem;
             text-align: center;
+            a {
+                font-size: 2rem !important;
+            }
         }
         .info {
             display: flex;
@@ -47,7 +50,23 @@
         .info {
             p, a {
                 margin: auto 0 !important;
+                font-size: 4vw !important;
             }
         }
     }
 }
+
+@media (max-width: 800px) {
+    .social-network-section {
+        main {
+            width: 100%;
+        }
+        .info {
+            p, a {
+                margin: auto 0 !important;
+                font-size: 6vw !important;
+            }
+        }
+    }
+}
+

@@ -5,6 +5,14 @@
 
 }
 
+.overlay-bg {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    opacity: 0.35;
+    background-color: black;
+    position: absolute;
+}
 .wrapper {
     position: relative;
     top: 0;
@@ -28,8 +36,6 @@
             filter: brightness(100%);
         }
     }
-
-
     .navbar {
         position: absolute;
         z-index: 10;

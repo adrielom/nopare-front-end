@@ -4,15 +4,24 @@
     section {
         position: relative;
         height: 100%;
+        margin-bottom: 0;
         overflow: hidden;
+        display: grid;
+        grid-template-rows: 20% auto;
         .title-component-wrapper {
             flex: 1;
-            height: 75vh;
             width: 45%;
+            transform: translateY(-20%);
             margin: auto;
             display: flex;
             align-items: center;
         }
+        div.headerTitleComponent {
+            justify-self: start !important;
+            margin-left:0;
+            align-self: start;
+        }
+        
     }
 }
 
@@ -23,6 +32,7 @@
 @media (max-width: 1400px) {
     .title-component-wrapper {
         width: 100% !important;
+        text-align: center;
         .title-component {
             margin: auto;
             font-size: 5.5vw !important;
@@ -33,6 +43,7 @@
 @media (max-width: 700px) {
     .title-component-wrapper {
         .title-component {
+            text-align: left;
             font-size: 8.5vw !important;
         }
     }

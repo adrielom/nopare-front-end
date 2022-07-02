@@ -12,6 +12,11 @@ import { VscFilePdf } from 'react-icons/all';
 import ContactMeSection from './Components/Sections/ContactMeSection';
 import SocialNetworkSection from './Components/Sections/SocialNetworkSection';
 import { ScrollingProvider, Section } from 'react-scroll-section';
+import DownloadManualButton from './Components/Shared/DownloadManualButton';
+
+function isMobile() {
+	return window.innerWidth <= 1400;
+}
 
 function App() {
 	return (
@@ -64,13 +69,9 @@ function App() {
 							<TitleComponent id='cintas-title'>
 								Veja como é fácil e rápido instalar as cintas No Pare.
 							</TitleComponent>
-							<a href='/manual.pdf' download='manual.pdf'>
-								<div className='rounded-button'>
-									<VscFilePdf size={25} style={{ marginRight: 10 }} />
-									baixe o manual
-								</div>
-							</a>
+							{!isMobile() && <DownloadManualButton />}
 						</VideoArticleSection>
+						{isMobile() && <DownloadManualButton />}
 					</div>
 				</Section>
 				<Section id='contato'>
