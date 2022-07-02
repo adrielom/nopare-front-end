@@ -1,7 +1,11 @@
+@import "../../../App.scss";
 .social-network-section {
     main {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - $defaultMargin);
         h1 {
             width: 65vw;
             text-align: center;
@@ -11,6 +15,9 @@
             color: black;
             font-size: 2rem;
             text-align: center;
+            a {
+                font-size: 2rem !important;
+            }
         }
         .info {
             display: flex;
@@ -37,10 +44,29 @@
 
 @media (max-width: 1400px) {
     .social-network-section {
+        main {
+            width: 100%;
+        }
         .info {
             p, a {
                 margin: auto 0 !important;
+                font-size: 4vw !important;
             }
         }
     }
 }
+
+@media (max-width: 800px) {
+    .social-network-section {
+        main {
+            width: 100%;
+        }
+        .info {
+            p, a {
+                margin: auto 0 !important;
+                font-size: 6vw !important;
+            }
+        }
+    }
+}
+

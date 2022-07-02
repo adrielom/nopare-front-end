@@ -1,16 +1,16 @@
-import React from 'react';
-import { TitleComponent } from '../../Shared/TitleComponent';
-import VideoBackgroundComponent from '../../Shared/VideoBackgroundComponent';
-import './theater-video-section.scss';
-import Video from '../../../assets/videos/pneu.webm';
 import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTitleComponent';
+import { TitleComponent } from '../../Shared/TitleComponent';
+import YoutubeBackgroundComponent from '../../Shared/YoutubeBackgroundComponent';
+import './theater-video-section.scss';
+import Pneu from '../../../assets/images/pneu.png';
 
 interface TheaterVideoSectionProps {}
 
 export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 	let color = '#d39326';
-	return (
-		<VideoBackgroundComponent className='video-background' uri={Video}>
+
+	const Content = () => {
+		return (
 			<section>
 				<HeaderTitleComponent color={color}>:: no pare</HeaderTitleComponent>
 				<div className='title-component-wrapper'>
@@ -23,6 +23,16 @@ export default function TheaterVideoSection({}: TheaterVideoSectionProps) {
 					</TitleComponent>
 				</div>
 			</section>
-		</VideoBackgroundComponent>
+		);
+	};
+
+	return (
+		<YoutubeBackgroundComponent
+			className='video-background'
+			image={Pneu}
+			src={'XiMgTRpK6Sk'}>
+			<div className='overlay-bg'></div>
+			<Content />
+		</YoutubeBackgroundComponent>
 	);
 }

@@ -1,4 +1,4 @@
-import React, { ClassAttributes, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import './video-background-component.scss';
 interface VideoBackgroundComponentProps
 	extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,9 +13,17 @@ export default function VideoBackgroundComponent({
 }: VideoBackgroundComponentProps) {
 	return (
 		<div className='video-background-component-wrapper' {...rest}>
-			<video autoPlay muted id='background-video' loop>
+			<video
+				playsInline
+				preload='auto'
+				autoPlay
+				loop
+				muted
+				id='background-video'>
 				<source src={uri} type='video/mp4' />
 				<source src={uri} type='video/ogg' />
+				<source src={uri} type='video/webm' />
+				<source src={uri} type='video/mov' />
 				Your browser does not support the video tag.
 			</video>
 			{children}

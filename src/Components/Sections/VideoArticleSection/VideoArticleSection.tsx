@@ -12,7 +12,7 @@ export default function VideoArticleSection({
 	return (
 		<section className={`video-article-section`}>
 			<div className='text-container'>{children}</div>
-			<div>
+			<div className='video-sect'>
 				<div className='video-container'>
 					<iframe
 						className='video-responsive-iframe'

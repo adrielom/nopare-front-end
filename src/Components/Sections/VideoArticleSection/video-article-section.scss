@@ -37,5 +37,24 @@
         .text-container {
             text-align: justify;
         }
+        .video-sect {
+            padding: $defaultMargin;
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .video-article-section {
+        .video-sect {
+            padding: 0 !important;
+        }
+    }
+    #tire-background-image {
+        .video-article-section {
+            .video-sect {
+                padding: 2em !important;
+            }
+        }
     }
 }
