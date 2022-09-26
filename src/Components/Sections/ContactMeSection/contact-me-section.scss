@@ -36,6 +36,12 @@ color: black;
     color: $accent-color !important;
 }
 
+.map {
+    margin-top: 2em;
+    min-height: 300px;
+    width: 100%;
+}
+
 .contact-me-section {
     background-color: $accent-color;
     margin: 0;

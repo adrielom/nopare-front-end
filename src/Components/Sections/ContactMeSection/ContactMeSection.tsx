@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeaderTitleComponent } from '../../Shared/HeaderTitleComponent/HeaderTitleComponent';
 import { TitleComponent } from '../../Shared/TitleComponent';
 import './contact-me-section.scss';
 import Input from 'react-phone-number-input/input';
 import Validator from 'email-validator';
 const URI = 'https://nopare-backend.herokuapp.com';
-// const URI = 'http://localhost:5000';
+
+import { Map, Marker, Overlay } from 'pigeon-maps';
+import OverlayMap from '../../Shared/OverlayMap';
+import { revendedores } from '../../../../revendedores';
+
 interface ContactMeSectionProps {}
 
 export default function ContactMeSection({}: ContactMeSectionProps) {
@@ -13,6 +17,7 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [loading, setLoading] = useState(false);
+	const [places, setPlaces] = useState(revendedores);
 
 	const onSubmit = async (e: any) => {
 		e.preventDefault();
@@ -52,6 +57,56 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 		setEmail('');
 		setPhone('');
 		setLoading(false);
+	};
+
+	const resetMapMarkers = () => {
+		let newPlaces = [...places];
+		newPlaces.forEach((place) => {
+			place.isChecked = false;
+		});
+		setPlaces(newPlaces);
+	};
+
+	const toggleMap = (place: any) => {
+		console.log(place);
+		let index = places.findIndex((el) => el.id === place.id) + 1;
+		let newPlaces = [...places];
+		newPlaces.forEach((place) => {
+			if (place.id === index) {
+				place.isChecked = true;
+			} else {
+				place.isChecked = false;
+			}
+		});
+
+		setPlaces(newPlaces);
+	};
+
+	const renderToggleMap = () => {
+		return places.map((rev: any) =>
+			!rev.isChecked ? (
+				<Marker
+					key={rev.position.join()}
+					width={50}
+					color={'#d39326'}
+					anchor={rev.position}
+					onClick={() => toggleMap(rev)}
+				/>
+			) : (
+				<Overlay
+					key={rev.position.join()}
+					offset={[125, 176]}
+					anchor={rev.position}>
+					<OverlayMap
+						callback={resetMapMarkers}
+						address={rev?.address}
+						title={rev?.title}
+						state={rev?.state}
+						contact={rev?.phone}
+					/>
+				</Overlay>
+			)
+		);
 	};
 
 	return (
@@ -108,6 +163,14 @@ export default function ContactMeSection({}: ContactMeSectionProps) {
 					</form>
 				</div>
 			</main>
+			<div className='map'>
+				<Map
+					height={500}
+					defaultCenter={[-14.2400732, -53.1805017]}
+					defaultZoom={4}>
+					{renderToggleMap()}
+				</Map>
+			</div>
 		</section>
 	);
 }

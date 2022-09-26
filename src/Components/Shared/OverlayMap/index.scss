@@ -1,0 +1,50 @@
+.map-card-bg {
+    background-color: white;
+    border-radius: 1em;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    padding: .5rem;
+    .icon {
+        cursor: pointer;
+    }
+    p {
+        font-size: .75em;
+        padding: 0;
+        margin: 0;
+        span {
+            font-weight: 600;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: flex-end;
+    }
+    div:has(.map-card-title) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .map-card-title {
+        font-size: 1;
+        color: #d39326;
+        font-weight: bold;
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -15px;
+        left: calc(50% - 26px);
+        border-style: solid;
+        border-width: 26px 26px 0 26px;
+        border-color: white transparent transparent transparent;
+        z-index: 20;
+    }
+}
