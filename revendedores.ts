@@ -1,3 +1,13 @@
+export type IRevendedores = {
+    id: number,
+    title: string,
+    phone: string,
+    address: string,
+    state: string,
+    isChecked: boolean,
+    position: number[],
+}
+
 export const revendedores = [
     {
         id: 1,
@@ -98,4 +108,4 @@ export const revendedores = [
         isChecked: false,
         position: [-12.889140896360546, -38.32672587368798]
     }
-]
+] as Array<IRevendedores>;
