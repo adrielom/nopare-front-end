@@ -77,7 +77,7 @@ export const revendedores = [
         title: "AROSPORT",
         phone: "(86) 3142-0965",
         address: "Av. Doutor Freitas, 408 - Sacramenta, Belém - PA, 66123-050"    ,
-        state: "Piauí",
+        state: "Pará",
         isChecked: false,
         position: [-1.4132213642453557, -48.47011700259026]
     },
