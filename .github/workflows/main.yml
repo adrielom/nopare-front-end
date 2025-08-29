@@ -2,8 +2,8 @@ name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Deploy when pushing to main
-  workflow_dispatch:  # Optional: manual trigger
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -26,10 +26,11 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Upload artifact to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+          name: site-artifact  # ✅ unique artifact name
 
       - name: Deploy to GitHub Pages
         id: deployment
