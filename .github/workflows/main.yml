@@ -2,12 +2,15 @@ name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
-    branches: [main]  # or your default branch
-  workflow_dispatch:
+    branches: [main]  # Deploy when pushing to main
+  workflow_dispatch:  # Optional: manual trigger
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,18 +26,11 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Upload artifact
+      - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Upload the built Vite folder
+          path: dist
 
-  deploy:
-    needs: build-and-deploy
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
