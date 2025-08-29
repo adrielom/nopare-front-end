@@ -2,6 +2,7 @@
 	"name": "nopare-front-end",
 	"private": true,
 	"version": "0.0.0",
+	"homepage": "https://adrielom.github.io/nopare-front-end",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build && yarn zip",
